@@ -1,0 +1,9 @@
+Rlease/
+Debug/
+obj/
+bin/
+*.nuspec
+*.nupkg
+
+packages/
+packages.config

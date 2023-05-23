@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1699936A-21EE-41FE-9671-198C8FF594B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GHIBMS.Common</RootNamespace>
+    <AssemblyName>GUHECommon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\Debug\Server\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\Release\Server\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.2.10, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.1.3.2\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClass\BaseAlarmController.cs" />
+    <Compile Include="BaseClass\BaseAlarmVariable.cs" />
+    <Compile Include="BaseClass\BaseCameraVariable.cs" />
+    <Compile Include="BaseClass\BaseController.cs" />
+    <Compile Include="BaseClass\BaseDecodeController.cs" />
+    <Compile Include="BaseClass\BaseDvrController.cs" />
+    <Compile Include="BaseClass\BaseIOServer.cs" />
+    <Compile Include="BaseClass\BaseIPCastController.cs" />
+    <Compile Include="BaseClass\BaseLEDController.cs" />
+    <Compile Include="BaseClass\BaseMatrixController.cs" />
+    <Compile Include="BaseClass\BaseMonitorVariable.cs" />
+    <Compile Include="BaseClass\BasePlatController.cs" />
+    <Compile Include="BaseClass\BaseVodController.cs" />
+    <Compile Include="BaseClass\ClientCamVariable.cs" />
+    <Compile Include="BaseClass\SoftwareInfo.cs" />
+    <Compile Include="BaseClass\TcpChannel.cs" />
+    <Compile Include="BaseClass\UdpChannel.cs" />
+    <Compile Include="BaseClass\TcpClientChannel.cs" />
+    <Compile Include="BaseClass\TcpServerChannel.cs" />
+    <Compile Include="BaseClass\WindPowerDeviceArgs.cs" />
+    <Compile Include="BaseClass\GisPosition.cs" />
+    <Compile Include="BaseCommunicationPlug.cs" />
+    <Compile Include="BasicClass\AlphanumComparator.cs" />
+    <Compile Include="BasicClass\ComboBoxItemCustom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasicClass\WriteVarialbe.cs" />
+    <Compile Include="BasicClass\PinYin.cs" />
+    <Compile Include="BasicClass\RuningParam.cs" />
+    <Compile Include="Command\LCDCommandArgs.cs" />
+    <Compile Include="Command\PSTNMessage.cs" />
+    <Compile Include="Communications\UDPServer.cs" />
+    <Compile Include="Config\TimeZone.cs" />
+    <Compile Include="BasicClass\ChannelIdEditor.cs" />
+    <Compile Include="Converter\BatteryConverter.cs" />
+    <Compile Include="Converter\LocalIpEnumConverter.cs" />
+    <Compile Include="Converter\MeterTypeEnumConverter.cs" />
+    <Compile Include="Converter\MsgTypeEnumConverter.cs" />
+    <Compile Include="Converter\PlatNameEnumConverter.cs" />
+    <Compile Include="DataBase\DBConnectTest.cs" />
+    <Compile Include="DataBase\ExcelHelper.cs" />
+    <Compile Include="DataBase\PSTNdb.cs" />
+    <Compile Include="DataBase\TimeZoneDb.cs" />
+    <Compile Include="Encryption\DesUtil.cs" />
+    <Compile Include="Encryption\HardDiskInfo.cs" />
+    <Compile Include="Encryption\RSAHelper.cs" />
+    <Compile Include="Encryption\SoftKey.cs" />
+    <Compile Include="Encryption\StringEncryption.cs" />
+    <Compile Include="Forms\FormEditChannelId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditChannelId.Designer.cs">
+      <DependentUpon>FormEditChannelId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditControllerId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditControllerId.Designer.cs">
+      <DependentUpon>FormEditControllerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditDeviceID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditDeviceID.Designer.cs">
+      <DependentUpon>FormEditDeviceID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ICamChannel.cs" />
+    <Compile Include="Interface\IDecodeController.cs" />
+    <Compile Include="BaseClass\SampVariable.cs" />
+    <Compile Include="BaseClass\VirtualChannel.cs" />
+    <Compile Include="BaseClass\VirtualController.cs" />
+    <Compile Include="BaseClass\VirtualVariable.cs" />
+    <Compile Include="BasicClass\FileTypeRegInfo.cs" />
+    <Compile Include="BasicClass\FileTypeRegister.cs" />
+    <Compile Include="BasicClass\IPCast3A.cs" />
+    <Compile Include="BasicClass\StringHelper.cs" />
+    <Compile Include="Command\AlarmCtrlCommand.cs" />
+    <Compile Include="BaseClass\AlarmMessage.cs" />
+    <Compile Include="BasicClass\Analyzer.cs" />
+    <Compile Include="BasicClass\TreeNodeBasicInfo.cs" />
+    <Compile Include="Command\CommandCode.cs" />
+    <Compile Include="BasicClass\FormNodeInfo.cs" />
+    <Compile Include="BasicClass\ListViewColumnSorter.cs" />
+    <Compile Include="BasicClass\TreeNodeClassLable.cs" />
+    <Compile Include="BasicClass\TreeExXMLCls.cs" />
+    <Compile Include="BasicClass\TreeviewSearch.cs" />
+    <Compile Include="BaseClass\Protocol.cs" />
+    <Compile Include="BaseClass\ProjectMng.cs" />
+    <Compile Include="BaseClass\SerialChannel.cs" />
+    <Compile Include="Command\SMSMessage.cs" />
+    <Compile Include="Config\GHConfigurationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converter\AreaNameEnumConverter.cs" />
+    <Compile Include="Converter\CamNameEnumConverter.cs" />
+    <Compile Include="Converter\DeviceLabelConverter.cs" />
+    <Compile Include="Converter\DvrNameEnumConverter.cs" />
+    <Compile Include="Converter\FormNameEnumConverter.cs" />
+    <Compile Include="Converter\MatrixNameEnumConverter.cs" />
+    <Compile Include="Converter\PasswordStringConverter.cs" />
+    <Compile Include="Converter\SystemLabelConverter.cs" />
+    <Compile Include="Converter\VariableNameEnumConverter.cs" />
+    <Compile Include="Converter\VodNameEnumConverter.cs" />
+    <Compile Include="DataBase\Smsdb.cs" />
+    <Compile Include="DataBase\TimeDb.cs" />
+    <Compile Include="BasicClass\CameraEditor.cs" />
+    <Compile Include="Interface\IAlarmChannel.cs" />
+    <Compile Include="Interface\IAlarmVariable.cs" />
+    <Compile Include="Interface\IAlarmController.cs" />
+    <Compile Include="Interface\IAPIChannel.cs" />
+    <Compile Include="Interface\IDvrCamChannel.cs" />
+    <Compile Include="Interface\ICamVariable.cs" />
+    <Compile Include="Interface\IController.cs" />
+    <Compile Include="Interface\IDataChannel.cs" />
+    <Compile Include="Interface\IDecodeChannel.cs" />
+    <Compile Include="Interface\IDvrCamVariable.cs" />
+    <Compile Include="Interface\IDvrChannel.cs" />
+    <Compile Include="Interface\IDvrController.cs" />
+    <Compile Include="Interface\IGisCoordinate.cs" />
+    <Compile Include="Interface\IIPCamChannel.cs" />
+    <Compile Include="Interface\IIPCamVariable.cs" />
+    <Compile Include="Interface\IIPCastChannel.cs" />
+    <Compile Include="Interface\IIPCastController.cs" />
+    <Compile Include="Interface\ILCDScreenChannel.cs" />
+    <Compile Include="Interface\ILCDScreenController.cs" />
+    <Compile Include="Interface\ILEDChannel.cs" />
+    <Compile Include="Interface\ILEDController.cs" />
+    <Compile Include="Interface\IMatrixChannel.cs" />
+    <Compile Include="Interface\IMatrixController.cs" />
+    <Compile Include="Interface\IMatrixProtocol.cs" />
+    <Compile Include="Interface\IMonitorChannel.cs" />
+    <Compile Include="Interface\IMonitorVariable.cs" />
+    <Compile Include="Interface\IPlatCamChannel.cs" />
+    <Compile Include="Interface\IPlatCamVariable.cs" />
+    <Compile Include="Interface\IPlatChannel.cs" />
+    <Compile Include="Interface\IPlatController.cs" />
+    <Compile Include="Interface\IProtocol.cs" />
+    <Compile Include="Interface\ICommunicationPlug.cs" />
+    <Compile Include="Interface\IPSTNChannel.cs" />
+    <Compile Include="Interface\IPSTNController.cs" />
+    <Compile Include="Interface\ISampVariable.cs" />
+    <Compile Include="Interface\ISMSChannel.cs" />
+    <Compile Include="Interface\ISMSController.cs" />
+    <Compile Include="Interface\ISMSVariable.cs" />
+    <Compile Include="Interface\ITcpController.cs" />
+    <Compile Include="Interface\IVariable.cs" />
+    <Compile Include="Interface\IVodChannel.cs" />
+    <Compile Include="Interface\IVodController.cs" />
+    <Compile Include="Device\LedCommand.cs" />
+    <Compile Include="Device\LedFont.cs" />
+    <Compile Include="Device\LedFontLib.cs" />
+    <Compile Include="Device\LedOutText.cs" />
+    <Compile Include="Device\TextOutInfo.cs" />
+    <Compile Include="Config\MRUManager.cs" />
+    <Compile Include="Config\TimeTaskInfo.cs" />
+    <Compile Include="Interface\ILCDScreenProtocol.cs" />
+    <Compile Include="Other\ZipHelper.cs" />
+    <Compile Include="Plugin\PluginMng.cs" />
+    <Compile Include="Communications\UDPConnection.cs" />
+    <Compile Include="Config\ClientConfig.cs" />
+    <Compile Include="Config\DesignConfig.cs" />
+    <Compile Include="DataBase\Almdb.cs" />
+    <Compile Include="DataBase\Rtdb.cs" />
+    <Compile Include="DataBase\Sqldb.cs" />
+    <Compile Include="DataBase\XmlHelper.cs" />
+    <Compile Include="BaseClass\BaseChannel.cs" />
+    <Compile Include="BasicClass\DataClient.cs" />
+    <Compile Include="BasicClass\DesignGraphicMng.cs" />
+    <Compile Include="BasicClass\DesignFormMng.cs" />
+    <Compile Include="BasicClass\Project.cs" />
+    <Compile Include="Command\VideoCommand.cs" />
+    <Compile Include="BasicClass\pubEnum.cs" />
+    <Compile Include="BasicClass\PubEvent.cs" />
+    <Compile Include="BasicClass\pubFun.cs" />
+    <Compile Include="DataBase\DBAssistant.cs" />
+    <Compile Include="DataBase\DBManager.cs" />
+    <Compile Include="BasicClass\StrConst.cs" />
+    <Compile Include="BasicClass\User.cs" />
+    <Compile Include="BaseClass\BaseVariable.cs" />
+    <Compile Include="Communications\SerialPortComm.cs" />
+    <Compile Include="Communications\XmlServer.cs" />
+    <Compile Include="Interface\IChannel.cs" />
+    <Compile Include="Interface\ISerialChannel.cs" />
+    <Compile Include="Interface\ITcpChannel.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Communications\ClientSocket.cs" />
+    <Compile Include="Communications\ServerSocket.cs" />
+    <Compile Include="Config\ServerConfig.cs" />
+    <Compile Include="Serialization\PropertyFormatter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FormEditChannelId.resx">
+      <DependentUpon>FormEditChannelId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditControllerId.resx">
+      <DependentUpon>FormEditControllerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditDeviceID.resx">
+      <DependentUpon>FormEditDeviceID.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

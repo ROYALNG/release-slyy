@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneywellIPM", "HoneywellIPM.csproj", "{AF7706B3-4816-4F2A-B850-8DE6411686E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPAddressControlLib", "..\IPAddressControlLib\IPAddressControlLib.csproj", "{1DCB3644-9A6F-4FFE-AD96-C662270470AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7706B3-4816-4F2A-B850-8DE6411686E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7706B3-4816-4F2A-B850-8DE6411686E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7706B3-4816-4F2A-B850-8DE6411686E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7706B3-4816-4F2A-B850-8DE6411686E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DCB3644-9A6F-4FFE-AD96-C662270470AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCB3644-9A6F-4FFE-AD96-C662270470AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCB3644-9A6F-4FFE-AD96-C662270470AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCB3644-9A6F-4FFE-AD96-C662270470AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

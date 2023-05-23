@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHMQS.Client.Test", "GHMQS.Client.Test\GHMQS.Client.Test.csproj", "{D339DBFB-E8A0-467F-AC43-FBB93FC2B8CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GHFramework", "GHFramework", "{3CC5F1F2-7934-4C71-A679-DB1A97C45050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHCore", "..\GHFramework\GHFramework\GHCore\GHCore.csproj", "{367907CA-D54D-4DF4-A138-C5523C931B97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHNETBASE", "..\GHFramework\GHFramework\GHNETBASE\GHNETBASE.csproj", "{BCF2B673-AB4D-4920-A181-CD0ED591018B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHRestClient", "..\GHFramework\GHFramework\GHRestClient(Common)\GHRestClient.csproj", "{44EE7BF2-F11E-4355-8587-E3C8ADF2B9D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHRESTFul.Client", "..\GHFramework\GHFramework\GHRESTFul.Client(MNS)\GHRESTFul.Client.csproj", "{712ACE6D-2D5E-4C95-BCA6-596F899DFA67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D339DBFB-E8A0-467F-AC43-FBB93FC2B8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D339DBFB-E8A0-467F-AC43-FBB93FC2B8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D339DBFB-E8A0-467F-AC43-FBB93FC2B8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D339DBFB-E8A0-467F-AC43-FBB93FC2B8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367907CA-D54D-4DF4-A138-C5523C931B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367907CA-D54D-4DF4-A138-C5523C931B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367907CA-D54D-4DF4-A138-C5523C931B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367907CA-D54D-4DF4-A138-C5523C931B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF2B673-AB4D-4920-A181-CD0ED591018B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF2B673-AB4D-4920-A181-CD0ED591018B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF2B673-AB4D-4920-A181-CD0ED591018B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF2B673-AB4D-4920-A181-CD0ED591018B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44EE7BF2-F11E-4355-8587-E3C8ADF2B9D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44EE7BF2-F11E-4355-8587-E3C8ADF2B9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44EE7BF2-F11E-4355-8587-E3C8ADF2B9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44EE7BF2-F11E-4355-8587-E3C8ADF2B9D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712ACE6D-2D5E-4C95-BCA6-596F899DFA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712ACE6D-2D5E-4C95-BCA6-596F899DFA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712ACE6D-2D5E-4C95-BCA6-596F899DFA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712ACE6D-2D5E-4C95-BCA6-596F899DFA67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{367907CA-D54D-4DF4-A138-C5523C931B97} = {3CC5F1F2-7934-4C71-A679-DB1A97C45050}
+		{44EE7BF2-F11E-4355-8587-E3C8ADF2B9D8} = {3CC5F1F2-7934-4C71-A679-DB1A97C45050}
+		{712ACE6D-2D5E-4C95-BCA6-596F899DFA67} = {3CC5F1F2-7934-4C71-A679-DB1A97C45050}
+	EndGlobalSection
+EndGlobal

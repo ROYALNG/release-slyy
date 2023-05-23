@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <types>
+    <type id="t1">SuperSight.Std.INTERFACE.DeployConfig</type>
+    <type id="t2">SuperSight.Std.INTERFACE.ObjectConfig</type>
+    <type id="t3">SuperSight.Std.INTERFACE.ObjectProperty</type>
+  </types>
+  <obj id="1" type="t1">
+    <items>
+        <!--Play, 流媒体视频-->
+        <item ref="10" />
+
+        <!--Playback, 集中存储回放-->
+        <item ref="20" />
+
+      <!--Dvr, 前端录像回放-->
+      <item ref="30" />
+
+        <!--NETDVS驱动-->
+        <item ref="40" />
+
+        <!--DAS,报警驱动-->
+        <item ref="50" />
+
+        <!--Decoder, 手机解码驱动-->
+        <item ref="60" />
+
+        <!--Search, 标准库设备搜索-->
+        <item ref="70" />
+    </items>
+  </obj>
+  
+  <!--Play-->
+  <obj id="10" type="t2">
+    <className>Std.Player.StdMtsPlayer, Std.Player</className>
+    <properties>
+      <item ref="11" />
+      <item ref="12" />
+      <item ref="13" />
+    </properties>
+  </obj>
+  <obj id="11" type="t3">
+    <key>deploy-type</key>
+    <value>Play</value>
+  </obj>
+  <obj id="12" type="t3">
+    <key>device-type</key>
+    <value>VIKORMTS</value>
+  </obj>
+  <obj id="13" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+
+  <!--Playback-->
+  <obj id="20" type="t2">
+    <className>Std.Player.StdDvrPlayerFactory, Std.Player</className>
+    <properties>
+      <item ref="21" />
+      <item ref="22" />
+      <item ref="23" />
+    </properties>
+  </obj>
+  <obj id="21" type="t3">
+    <key>deploy-type</key>
+    <value>Playback</value>
+  </obj>
+  <obj id="22" type="t3">
+    <key>device-type</key>
+    <value>VIKOR</value>
+  </obj>
+  <obj id="23" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+
+  <!--Dvr-->
+  <obj id="30" type="t2">
+    <className>Std.Player.StdDvr, Std.Player</className>
+    <properties>
+      <item ref="31" />
+      <item ref="32" />
+      <item ref="33" />
+      <item ref="34" />
+    </properties>
+  </obj>
+  <obj id="31" type="t3">
+    <key>deploy-type</key>
+    <value>Dvr</value>
+  </obj>
+  <obj id="32" type="t3">
+    <key>device-type</key>
+    <value>VIKOR</value>
+  </obj>
+  <obj id="33" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+  <obj id="34" type="t3">
+    <key>connect-mode</key>
+    <value>LogonDevice</value>
+  </obj>
+
+  <!--Netdvs-->
+  <obj id="40" type="t2">
+    <className>SuperSight.NETDVS.STD.StdSessionFactory, NETDVS</className>
+    <properties>
+      <item ref="41" />
+      <item ref="42" />
+      <item ref="43" />
+      <item ref="44" />
+    </properties>
+  </obj>
+  <obj id="41" type="t3">
+    <key>deploy-type</key>
+    <value>Netdvs</value>
+  </obj>
+  <obj id="42" type="t3">
+    <key>device-type</key>
+    <value>VIKOR</value>
+  </obj>
+  <obj id="43" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+  <obj id="44" type="t3">
+    <Key>option</Key>
+    <Value>None</Value>
+  </obj>
+
+  <!--DAS-->
+  <obj id="50" type="t2">
+    <className>SuperSight.DAS.Service.Devices.Std.STDFactory, DAS.Service</className>
+    <properties>
+      <item ref="51" />
+      <item ref="52" />
+      <item ref="53" />
+    </properties>
+  </obj>
+  <obj id="51" type="t3">
+    <key>deploy-type</key>
+    <value>DAS</value>
+  </obj>
+  <obj id="52" type="t3">
+    <key>device-type</key>
+    <value>VIKOR</value>
+  </obj>
+  <obj id="53" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+
+  <!--Decoder-->
+  <obj id="60" type="t2">
+    <className>SuperSight.VideoDecode.Process.SDK.StdDecodeLib, Decoder</className>
+    <properties>
+      <item ref="61" />
+      <item ref="62" />
+      <item ref="63" />
+    </properties>
+  </obj>
+  <obj id="61" type="t3">
+    <key>deploy-type</key>
+    <value>Decoder</value>
+  </obj>
+  <obj id="62" type="t3">
+    <key>device-type</key>
+    <value>VIKOR</value>
+  </obj>
+  <obj id="63" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+
+
+  <!--Search-->
+  <obj id="70" type="t2">
+    <className>Std.Player.StdSearch, Std.Player</className>
+    <properties>
+      <item ref="71" />
+      <item ref="72" />
+      <item ref="73" />
+    </properties>
+  </obj>
+  <obj id="71" type="t3">
+    <key>deploy-type</key>
+    <value>Search</value>
+  </obj>
+  <obj id="72" type="t3">
+    <key>device-type</key>
+    <value>VIKOR</value>
+  </obj>
+  <obj id="73" type="t3">
+    <key>object-factory</key>
+    <value>SuperSight.Std.VikorLib.VikorObjectFactory, Std.VikorLib</value>
+  </obj>
+</config>

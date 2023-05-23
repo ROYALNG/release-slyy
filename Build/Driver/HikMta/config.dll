@@ -1,0 +1,219 @@
+
+[Time]
+LocalPort1_PortValue = 4001
+LocalPort1_HearTime = 5
+LocalPort1_LiveTime = 20
+LocalPort1_Log = 1
+
+
+LocalPort2_PortValue =4002
+LocalPort2_HearTime =1
+LocalPort2_LiveTime =20
+LocalPort2_Log = 1
+
+LocalPort3_PortValue =4003
+LocalPort3_HearTime =5
+LocalPort3_LiveTime =20
+LocalPort3_Log = 1
+
+LocalPort4_PortValue =4004
+LocalPort4_HearTime =5
+LocalPort4_LiveTime =20
+LocalPort4_Log = 0
+
+LocalPort5_PortValue = 4005
+LocalPort5_HearTime = 5
+LocalPort5_LiveTime = 20
+LocalPort5_Log = 0
+
+LocalPort6_PortValue = 4006
+LocalPort6_HearTime = 5
+LocalPort6_LiveTime = 20
+LocalPort6_Log = 0
+
+LocalPort7_PortValue = 4007
+LocalPort7_HearTime = 5
+LocalPort7_LiveTime = 20
+LocalPort7_Log = 0
+
+LocalPort8_PortValue = 4008
+LocalPort8_HearTime = 5
+LocalPort8_LiveTime = 20
+LocalPort8_Log = 0
+
+LocalPort9_PortValue = 5001
+LocalPort9_HearTime = 5
+LocalPort9_LiveTime = 20
+LocalPort9_Log = 0
+
+LocalPort10_PortValue = 5002
+LocalPort10_HearTime = 5
+LocalPort10_LiveTime = 20
+LocalPort10_Log = 0
+
+LocalPort11_PortValue = 5003
+LocalPort11_HearTime = 5
+LocalPort11_LiveTime = 60
+LocalPort11_Log = 0
+
+LocalPort12_PortValue = 5004
+LocalPort12_HearTime = 5
+LocalPort12_LiveTime = 20
+LocalPort12_Log = 0
+
+LocalPort13_PortValue = 5005
+LocalPort13_HearTime = 5
+LocalPort13_LiveTime = 20
+LocalPort13_Log = 0
+
+LocalPort14_PortValue = 5006
+LocalPort14_HearTime = 5
+LocalPort14_LiveTime = 20
+LocalPort14_Log = 0
+
+LocalPort15_PortValue = 5007
+LocalPort15_HearTime = 5
+LocalPort15_LiveTime = 20
+LocalPort15_Log = 0
+
+LocalPort16_PortValue = 5008
+LocalPort16_HearTime = 5
+LocalPort16_LiveTime = 20
+LocalPort16_Log = 0
+
+net_hearttime = 7
+net_livetime = 20
+gprs_hearttime = 5
+gprs_livetime = 600
+
+
+[Mode]
+ReportMode = 1
+StatMode = 2
+[CC408]
+ON = 1
+AlarmRecoverDelay = 2
+[7400]
+ON = 1
+AlarmMemDelay = 2
+[7240]
+ON = 1
+AlarmMemDelay = 2
+
+
+[CID]
+DEL BY        =E6B3
+CHG BY        =E6B2
+ADD BY        =E6B1
+UNTESTED      =R805
+UESTRIOTED USE NO WORD =E842
+TROUBLE       =E380
+TRBL RST      =R380
+TMPR RST      =R383
+TIME SET      =E832
+TIME ERROR    =E833
+TESTED        =E805
+TEST EXIT     =R607
+TEST ENTRY    =E607
+TAMPER        =E383
+SYSTEM SHUT   =E825
+SYSTEM RST    =E828
+SYSTEM RESET  =R305
+SKED CHANGE   =E631
+SKED BLOWUP   =E843
+SELF TEST     =E602
+RPM RST       =R382
+RPM SUPR      =E382
+RLY TRBL      =E320
+RLY RST       =R320
+RFLB RST RF   =R384
+RF TRBL       =E812
+RF SUPR       =E814
+RF RST        =R812
+RF LBAT       =E384
+RF JAM RF     =E810
+RF EXPND      =E333
+RECENT ARM    =R459
+PROGRM ENTRY  =E830
+PROGRAM EXIT  =R830
+PROG CHANGE   =E831
+PRINTER RST   =R336
+PRINTER FAIL  =E336
+PNC RST       =R123
+PARTIAL ARM   =R821
+PANIC         =E123
+PAGER RSTR    =R804
+PAGER FAILED  =E804
+MISSED DISRM  =E453
+MISSED ARM    =E822
+MED RST       =R809
+LOW BATTERY   =E302
+LOW BATT RST  =R302
+LOG CLEARED   =E621
+LOG 90% FULL  =E623
+LOG 50% FULL  =E622
+JAM RSTR RF   =R810
+FRTR RST      =R373
+FIRE TRB      =E373
+FIRE RST      =R110
+    FIRE      =E110        
+FAILED        =E802
+FAIL TO COMM  =E807
+EXP TRBL      =E333
+EXP TMPR      =E383
+EXP SHRT      =E332
+EXP RST       =R333
+DURESS        =E121
+DURE RST      =R121
+DISRMD-LATE   =E452
+DISRMD-EARLY  =E451
+DISARMED-REM  =E407
+DISARMED-KEY  =E823
+DISARMED      =E401
+DISARM-AUTO   =E401
+DIALER SHUT   =E351
+DIALER RST    =R351
+COMM RESTORE  =R807
+CANCEL        =E406
+CALL BACK     =E411
+BYPASS        =E570
+BYP RST       =R570
+BURGLARY      =E134
+BURG RST      =R134
+BELL TROUBLE  =E321
+BELL RESTORE  =R321
+BATTERY FAIL  =E811
+BAT TST FAIL  =E309
+AUXILARY      =E150
+AUX RST       =R150
+ARMED-STAY    =R401
+ARMED-REM     =R407
+ARMED-QUICK   =R408
+ARMED-LATE    =R452
+ARMED-KEY     =R823
+ARMED-EARLY   =R451
+ARMED-AUTO    =R401
+ARMED         =R401
+ARM FAILED    =E454
+ACC SKED CHG  =E632
+AC RESTORE    =R301
+AC LOSS       =E301
+
+[in_port]
+in_port2_port=4002
+in_port2_sdkProto=7
+in_port2_start=1
+in_port11_port=5003
+in_port11_sdkProto=8
+in_port11_start=1
+in_port1_port=4001
+in_port1_sdkProto=7
+in_port1_start=0
+in_port3_port=4003
+in_port3_sdkProto=7
+in_port3_start=1
+[tcp_out_port]
+tcp_port1_port=5000
+tcp_port1_dataProto=5
+tcp_port1_transProto=1
+tcp_port1_start=0

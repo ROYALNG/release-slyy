@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<proj>
+  <!--******************************************************--> 
+  <!--VISTA IPM 协议 协议编码：202-->
+  <!--******************************************************-->
+  
+  <!--命令：PushPanelAlarm 上报报警主机报警防区-->
+  <!--参数：1：主机地址-->
+  <!--数据：2: 报警防区编号-->
+  <!--数据：3: 报警防区状态 0 正常待警  1 报警  2 防区旁路 3 防区故障>-->
+  <!--特殊防区编码\地址
+  ("LowBatty",  300);
+  ("AC Loss",   301);
+  ("EnterProg", 302);
+  ("PanelArm" , 303);
+  ("PanelDsp",  304);
+  ("PassWord",  305);
+  -->
+<!--  取消
+  <GHISMS>
+    <command>
+      <code>1</code>
+      <function>PushPanelAlarm</function>
+      <hostaddr/>
+      <zone/>
+      <zonestatus/>
+    </command>
+  </GHISMS>-->
+  <!--命令：PushPanelInfo 上报报警主机显示信息-->
+  <!--参数：1：主机地址-->
+  <!--参数：2：主机状态-->
+  <!--主机状态对应的枚举类型
+  public enum VistaPanelState
+  {
+      VistaTrouble = 2,
+      VistaReady = 16,
+      VistaFire = 32,
+      VistaLowBattery = 64,
+      VistaArmStay = 128,
+      VistaAlarm = 256,
+      VistaArmAway = 512,
+      VistaACPower = 1024,
+      VistaBypass = 2048,
+      VistaChime = 4096,
+      VistaProgramBit = 819 2,
+      VistaArmInstant = 16384,
+      }
+
+
+  <GHISMS>
+    <command>
+      <code>2</code>
+      <function>PushPanelInfo</function>
+      <hostaddr/>
+      <dispinfo/>
+      <panelstatus/>
+      <zone/>
+      <isplayback/>
+    </command>
+  </GHISMS>
+    -->
+  <!--命令：SetPanelStatus 主机操作-->
+  <!--参数：1：主机地址-->
+  <!--参数：2：主机状态-->
+  <!--panelstatus
+  外出布防	密码 + AWAY [2].
+  留守布防	密码 + STAY [3].
+  即时布防	密码 + INSTANT [7].
+  最大布防	密码 + MAXIMUM [4].
+  撤防	密码 + OFF [1].
+  -->
+  
+
+  <GHISMS>
+    <command>
+      <code>3</code>
+      <function>SetPanelStatus</function>
+      <hostname/>
+      <part/>
+      <panelstatus/>
+    </command>
+  </GHISMS>
+
+
+  <!--命令：SetPanelZoneBypass 主机操作-->
+  <!--参数：1：主机地址-->
+  <!--参数：2：防区号-->
+  <!--panelstatus
+  防区旁路	密码 + BYPASS [6] + 防区号码
+  -->
+
+  <GHISMS>
+    <command>
+      <code>4</code>
+      <function>SetAlarmZoneBypass</function>
+      <hostaddr/>
+      <zone/>
+    </command>
+  </GHISMS>
+  
+  <!--命令：Sendkey 向指定的设备发送键盘命令-->
+  <!--参数：1：主机名称-->
+  <!--数据：2: 发送的键盘命令-->
+
+  <GHISMS>
+    <command>
+      <code>5</code>
+      <function>Sendkey</function>
+      <hostname/>
+      <key/>
+    </command>
+  </GHISMS>
+  
+  <!--命令：Sendkey 向指定的设备发送键盘命令-->
+  <!--参数：1：主机名称-->
+  <!--数据：2: 发送的键盘命令序列-->
+  <GHISMS>
+    <command>
+      <code>6</code>
+      <function>SendKeySequence</function>
+      <hostname/>
+      <keysequence/>
+      <pram3/>
+    </command>
+  </GHISMS>
+
+ 
+  <GHISMS>
+  <command>
+    <code>7</code>
+    <function> EnableKeypad</function>
+    <hostname/>
+  </command>
+</GHISMS>
+
+<!--报警主机连接状态-->
+  <GHISMS>
+    <command>
+      <code>8</code>
+      <function> DeviceState</function>
+      <hostname/>
+      <state/>
+    </command>
+  </GHISMS>
+  
+  
+  
+  
+  <!--命令 视频控制  VideoControl-->
+  
+
+  <GHISMS>
+    <command>
+      <code>10</code>
+      <function>VideoControl</function>
+      <cmd/>
+      <camname/>
+      <matrixname/>
+      <videoin/>
+      <videoout/>
+      <vparam1/>
+      <vparam2/>
+      <vparam3/>
+    </command>
+  </GHISMS>
+ 
+
+
+  <GHISMS>
+    <command>
+      <code>12</code>
+      <function>PTZControl</function>
+      <matrixid/>
+      <camid/>
+      <VideoCommand/>
+      <stop/>
+      <speed/>
+    </command>
+  </GHISMS>
+
+<!--门禁报警-->
+  <GHISMS>
+    <command>
+      <code>20</code>
+      <function>PushAccessAlarm</function>
+      <controlleraddr/>
+      <dooraddr/>
+      <alarmtype/>
+      <otherinfo/>
+    </command>
+  </GHISMS>
+  <!--***********************************************************************************************-->
+  <!--server 至 client-->
+  <!--通用报警采用变量报警类上传2011-8-6-->
+
+  <GHISMS>
+    <command>
+      <code>100</code>
+      <function>SendAlarm</function>
+      <Guid>报警GUID</Guid>
+      <Name>报警点名称</Name>
+      <Desc>报警点描述</Desc>
+      <PointValue>报警值</PointValue>
+      <Priority>报警优先级</Priority> 
+      <AlarmDesc>报警描述</AlarmDesc>
+      <varAddr>报警变量地址</varAddr>
+      <conName>报警点所属控制器名称</conName>
+      <AlarmForm>报警联动画面</AlarmForm>
+      <AlarmTime>报警时间</AlarmTime>
+      <DeviceLabel>参考分类</DeviceLabel>
+      <AlarmVideo>报警关联的视频点名称</AlarmVideo>
+      
+    </command>
+  </GHISMS>
+  
+  
+<!--消警成功通知-->  
+<GHISMS>
+  <command>
+    <code>101</code>
+    <function>ClearAlarm</function>
+    <Guid>报警GUID</Guid>
+    <user>消警用户名</user>
+    <result>处理结果</result>
+  </command>
+</GHISMS>
+
+  <!--发送报警列表-->
+
+  <GHISMS>
+    <command>
+      <code>102</code>
+      <function>SendAlarmList</function>
+      <AlarmList Guid="" Name="" Desc ="" AlarmDesc="" varAddr="" Priority="" conName="" AlarmForm="" AlarmTime="" DeviceLabel="" Area=""/>
+      <AlarmList Guid="" Name="" Desc ="" AlarmDesc="" varAddr="" conName="" AlarmForm="" AlarmTime=""/>
+      <AlarmList Guid="" Name="" Desc ="" AlarmDesc="" varAddr="" conName="" AlarmForm="" AlarmTime=""/>
+    </command>
+  </GHISMS>
+
+  <!--发送实时报警总数-->
+
+  <GHISMS>
+    <command>
+      <code>103</code>
+      <function>SendAlarmCount</function>
+      <count/>
+    </command>
+  </GHISMS>
+
+  <!--设定点的值-->
+  <GHISMS>
+    <command>
+      <code>104</code>
+      <function>PointSetValueResult</function>
+      <Name>PointName</Name>
+      <Result>Result</Result>
+    </command>
+  </GHISMS>
+
+  <!--发送订阅点数据列表-->
+
+  <GHISMS>
+    <command>
+      <code>105</code>
+      <function>SendSubscribeFormData</function>
+      <VarList Name="" Value="" Desc=""/>
+    
+    </command>
+  </GHISMS>
+
+  <!--发送所有点列表-->
+
+  <GHISMS>
+    <command>
+      <code>107</code>
+      <function>SendPointList</function>
+      <VarList Name="" Desc =""  addr="" conName="" area="" deviceLabel=""/>
+     
+    </command>
+  </GHISMS>
+
+  <!--区域列表-->
+
+  <GHISMS>
+    <command>
+      <code>108</code>
+      <function>SendRegionList</function>
+      <Regions>
+        <Region guid="" Code="" Description ="" Status="" Display_Name=""/>
+      </Regions>
+    </command>
+  </GHISMS>
+
+  <!--发送最新报警-->
+
+  <GHISMS>
+    <command>
+      <code>109</code>
+      <function>SendOneAlarmList</function>
+      <AlarmList Guid="" Name="" Desc ="" AlarmDesc="" varAddr="" conName="" AlarmForm="" AlarmTime=""/>
+    </command>
+  </GHISMS>
+
+  <!--返回登录的用户-->
+
+  <GHISMS>
+    <command>
+      <code>110</code>
+      <function>SendLoginUser</function>
+      <user  Guid="" UserName ="" Password ="" DisplayName="" Email="" Phone="" MobilePhone="" Status="" Level=""/>
+      <AreaList  Guid="" Name ="" Code="" Desc=""/>
+      <FunList   Guid="" Name ="" Code="" Desc="" />
+    </command>
+  </GHISMS>
+
+  <!--返回用户注销成功-->
+
+  <GHISMS>
+    <command>
+      <code>111</code>
+      <function>SendLogoutUser</function>
+      <Name>userName</Name>
+    </command>
+  </GHISMS>
+ 
+  <!--返回区域-->
+
+  <GHISMS>
+    <command>
+      <code>112</code>
+      <function>SendRegion</function>
+      <region/>
+    </command>
+  </GHISMS>
+  <!--发送监控设备-->
+  <GHISMS>
+    <command>
+      <code>113</code>
+      <function>SendDeviceList</function>
+      <camlist/>
+      <dvrlist/>
+      <matrixlist/>
+      <vodlist/>
+      <alarmhost/>
+      <alarmzone/>
+    </command>
+  </GHISMS>
+  <!--回复查询事件请求-->
+  <GHISMS>
+    <command>
+      <code>114</code>
+      <function>GetEventHistoryList</function>
+      <eventlist guid="" title="" createtime="" type="" msg="" machine=""/>
+      
+    </command>
+  </GHISMS>
+  <!--回复查询报警记录请求-->
+  <GHISMS>
+    <command>
+      <code>115</code>
+      <function>GetAlarmHistoryList</function>
+      <alarmlist guid="" pointname="" pointvalue ="" pointdesc="" pointtype="" alarmtime="" priority="" handletime="" handleresult="" handleuser=""/>
+    </command>
+  </GHISMS>
+
+  
+  
+  
+  <!--回复查询数据历史请求-->
+  <GHISMS>
+    <command>
+      <code>116</code>
+      <function>GetDataHistoryList</function>
+      <history guid="" pointname="" pointvalue ="" pointdesc="" pointtype="" recordtime="" recordtype=""></history>
+    </command>
+  </GHISMS>
+
+  <!--发送报警主机状态-->
+  <GHISMS>
+    <command>
+      <code>117</code>
+      <function>SentAlarmHostState</function>
+      <host hostname="" PanelReady="" PanelArm="" KeypadInfo="" LowBattery="" ACLoss="" EntryProgram="" CommStatus="" />
+    </command>
+  </GHISMS>
+
+  <!--回复查询驱动通道状态-->
+  <GHISMS>
+    <command>
+      <code>118</code>
+      <function>GetChannelState</function>
+      <channel Name="" Desc="" Active="" Enable=""/>
+    </command>
+  </GHISMS>
+  <!--回复修改密码-->
+  <GHISMS>
+    <command>
+      <code>120</code>
+      <function>ChangePassword</function>
+      <state/>
+      <Psw/>
+    </command>
+  </GHISMS>
+  <!--回复更新定位-->
+  <GHISMS>
+    <command>
+      <code>121</code>
+      <function>UpdateGisPos</function>
+      <state/>
+  
+    </command>
+  </GHISMS>
+  <!--回复信息，显示在状态栏-->
+  <GHISMS>
+    <command>
+      <code>122</code>
+      <function>SendCallBackMsg</function>
+      <state/>
+
+    </command>
+  </GHISMS>
+
+  <!--发送信息-->
+  <GHISMS>
+    <command>
+      <code>123</code>
+      <function>SendMsg</function>
+      <wparm/>
+      <lparm/>
+    </command>
+  </GHISMS>
+  <!--发送实时事件信息-->
+  <GHISMS>
+    <command>
+      <code>124</code>
+      <function>SendEventMsg</function>
+      <title/>
+      <type/>
+      <msg/>
+    </command>
+  </GHISMS>
+    <!--2013-4-10返回客户端主动刷新变量，用于曲线-->
+    <GHISMS>
+      <command>
+        <code>130</code>
+        <function>RefreshVariable </function>
+        <VarList Name="" Value="" Desc=""/>
+      </command>
+    </GHISMS>
+    <GHISMS>
+      <command>
+        <code>131</code>
+        <function>GetHistoryCurve </function>
+        <name/>
+        <history recordtime="" pointvalue=""/>
+      </command>
+      <GHISMS>
+        <command>
+          <code>132</code>
+          <function>SentUserDataReady </function>
+        
+        </command>
+      </GHISMS>
+      <GHISMS>
+        <command>
+          <code>133</code>
+          <function>GetFunDetail</function>
+          <no>风机编号</no>
+          <comm>风速</comm>
+          <speed>风速</speed>
+          <state>状态</state>
+          <power>功率</power>
+          <type>类型</type>
+        </command>
+      </GHISMS>
+    </GHISMS>
+
+  <!--查询报警预案回复-->
+  <GHISMS>
+    <command>
+      <code>134</code>
+      <function>GetAlarmPreCase</function>
+      <precase>变量名称</precase>
+    </command>
+  </GHISMS>
+  
+  
+  
+  <!--***********************************************************************************************-->
+  <!--client 至 server-->
+
+
+  <!--消警-->
+  <GHISMS>
+    <command>
+      <code>201</code>
+      <function>ClearAlarm</function>
+      <Guid>报警GUID</Guid>
+      <Result>报警原因</Result>
+    </command>
+  </GHISMS>
+  <!--读报警列表-->
+  <GHISMS>
+    <command>
+      <code>202</code>
+      <function>GetAlarmList</function>
+    </command>
+  </GHISMS>
+  
+  <!--读实时报警总数-->
+
+  <GHISMS>
+    <command>
+      <code>203</code>
+      <function>GetAlarmCount</function>
+    </command>
+  </GHISMS>
+
+  <!--设定点的值-->  
+  <GHISMS>
+    <command>
+      <code>204</code>
+      <function>PointSetValue</function>
+      <Name>PointName</Name>
+      <Value>SetPointValue</Value>
+    </command>
+  </GHISMS>
+  <!--订阅画面数据-->
+  <GHISMS>
+    <command>
+      <code>205</code>
+      <function>SubscribeFormData</function>
+      <Name>PointName</Name>
+    </command>
+  </GHISMS>
+  <!--订阅画面数据-->
+  <GHISMS>
+    <command>
+      <code>206</code>
+      <function>UnSubscribeFormData</function>
+      <Name>FormName</Name>
+    </command>
+  </GHISMS>
+
+  <!--读点的列表-->
+  <GHISMS>
+    <command>
+      <code>207</code>
+      <function>PointGetList</function>
+    </command>
+  </GHISMS>
+
+  <!--获取区域列表-->
+  <GHISMS>
+    <command>
+      <code>208</code>
+      <function>GetRegion</function>
+    </command>
+  </GHISMS>
+
+  <!--用户登录请求-->
+  <GHISMS>
+    <command>
+      <code>210</code>
+      <function>LoginRequest</function>
+      <Name>userName</Name>
+      <Psw>Password</Psw>
+      <Relogin>Relogin</Relogin>
+    </command>
+  </GHISMS>
+
+  <!--当前用户注销-->
+  <GHISMS>
+    <command>
+      <code>211</code>
+      <function>LogoutRequest</function>
+      <Name>userName</Name>
+    </command>
+  </GHISMS>
+
+  <!--查询事件记录-->
+  <GHISMS>
+    <command>
+      <code>214</code>
+      <function>GetEventHistoryList</function>
+      <time>时间</time>
+      <type>事件类型</type>
+    </command>
+  </GHISMS>
+  <!--查询报警记录-->
+  <GHISMS>
+    <command>
+      <code>215</code>
+      <function>GetAlarmHistoryList</function>
+      <time>时间</time>
+      <name>点名称</name>
+    </command>
+  </GHISMS>
+
+  <!--查询数据历史记录-->
+  <GHISMS>
+    <command>
+      <code>216</code>
+      <function>GetDataHistoryList</function>
+      <time>时间</time>
+      <name>点名称</name>
+      <type>记录类型</type>
+    </command>
+  </GHISMS>
+  
+  <!--查询报警主机状态-->
+  <GHISMS>
+    <command>
+      <code>217</code>
+      <function>GetAlarmHostState</function>
+      <hostlist/>
+    </command>
+  </GHISMS>
+
+  <!--查询驱动通道状态 20140827修改，原来只是查询通道状态，改为可查询所有状态-->
+  <GHISMS>
+    <command>
+      <code>218</code>
+      <function>GetChannelState</function>
+      <names>设备名称，多个设备用|分割</names>
+      <type>类型 1：通道 2：控制器 3：变量</type>
+    </command>
+  </GHISMS>
+
+  <!--启动、停止设备状态 20140827修改，原来只是道通状态-->
+  <GHISMS>
+    <command>
+      <code>219</code>
+      <function>SetDeviceState</function>
+      <name/>
+      <active/>
+      <type>1:通道 2：控制器 3：变量</type>
+    </command>
+  </GHISMS>
+  <!--修改密码-->
+  <GHISMS>
+    <command>
+      <code>220</code>
+      <function>ChangePassword</function>
+       <psw/>
+     </command>
+  </GHISMS>
+  <!--修改密码-->
+  <GHISMS>
+    <command>
+      <code>221</code>
+      <function>UpdateGisPos</function>
+      <point/>
+      <ln/>
+      <la/>
+      <bshow/>
+      <iconnane/>
+    </command>
+  </GHISMS>
+  <!--报警复位-->
+  <GHISMS>
+    <command>
+      <code>222</code>
+      <function>AlarmReset</function>
+    </command>
+  </GHISMS>
+
+  <!--LED发布-->
+  <GHISMS>
+    <command>
+      <code>223</code>
+      <function>LedShowString </function>
+      <ledlist/>
+      <outtextinfo/>
+      <outstring/>
+    </command>
+  </GHISMS>
+
+  <!--LED发布-->
+  <GHISMS>
+    <command>
+      <code>224</code>
+      <function>LedReplay </function>
+      <ledlist/>
+      <drv/>
+      <index/>
+    </command>
+  </GHISMS>
+  <!--LED发布-->
+  <GHISMS>
+    <command>
+      <code>225</code>
+      <function>LedReset </function>
+      <ledlist/>
+  
+    </command>
+  </GHISMS>
+  <!--2013-4-10客户端主动刷新变量，用于曲线-->
+  <GHISMS>
+    <command>
+      <code>230</code>
+      <function>RefreshVariable </function>
+      <Name>PointName</Name>
+    </command>
+  </GHISMS>
+  <!--查询数据历史记录曲线-->
+  <GHISMS>
+    <command>
+      <code>231</code>
+      <function>GetHistoryCurve</function>
+      <time>时间</time>
+      <name>点名称</name>
+    </command>
+  </GHISMS>
+  <!--查询风电风机详细数据-->
+  <GHISMS>
+    <command>
+      <code>233</code>
+      <function>GetFunDetail</function>
+      <id>风机ID</id>
+    </command>
+  </GHISMS>
+  <!--查询报警预案-->
+  <GHISMS>
+    <command>
+      <code>234</code>
+      <function>GetAlarmPreCase</function>
+      <variable>变量名称</variable>
+    </command>
+  </GHISMS>
+
+  <!--LED拼接屏控制-->
+  <GHISMS>
+    <command>
+      <code>235</code>
+      <function>LCDScreenControl</function>
+      <name>控制器名称</name>
+      <ctrlcode>控制命令码 1：拼接 2：拆屏 3：开屏 4：关屏 5：场景</ctrlcode>
+      <screenrc>屏格坐标</screenrc>
+      <args/>
+    </command>
+  </GHISMS>
+
+
+
+  <!--通讯测试-->
+  <GHISMS>
+    <command>
+      <code>300</code>
+   </command>
+  </GHISMS>
+</proj>
+
+
+
+
+
+
+
